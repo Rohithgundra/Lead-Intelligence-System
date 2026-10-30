@@ -1,0 +1,49 @@
+# Lead Intelligence System Configuration
+# Forward Deployed AI Engineering Solution
+
+company_profile:
+  name: "Antigravity Pipeline Intelligence"
+  target_customer: "Mid-market B2B SaaS and technology companies (50-2,500 FTE)"
+  value_proposition: "Automate lead qualification, cut 95% drop-off rate, and save 10+ hours per SDR weekly"
+
+qualification_rubric:
+  total_scale: 10.0
+  weights:
+    company_size_fit:
+      max_score: 2.5
+      sweet_spot_range: [100, 2500]
+      scaling_range: [50, 5000]
+      micro_cutoff: 10
+    industry_fit:
+      max_score: 2.5
+      tier_1_core: ["SaaS", "Software", "Tech", "FinTech", "Finance", "Analytics", "Cybersecurity", "AI/ML"]
+      tier_2_growth: ["Healthcare", "Logistics", "Retail", "Marketing", "EdTech", "Consulting", "Insurance"]
+      tier_3_secondary: ["Manufacturing", "Real Estate", "Pharma", "Energy"]
+      tier_4_low_fit: ["Hospitality", "Events", "Agriculture", "Government"]
+    source_intent:
+      max_score: 3.0
+      inbound_demo: 3.0
+      referral: 2.5
+      sales_call: 2.5
+      webinar: 2.0
+      content_download: 1.5
+      linkedin_outreach: 1.0
+    engagement_recency:
+      max_score: 2.0
+      hot_lead_days: 7
+      active_days: 30
+      cooling_days: 90
+      stale_disqualification_days: 180
+
+  decision_thresholds:
+    qualified_min_score: 7.0
+    p1_high_priority_min_score: 8.5
+    p2_medium_priority_min_score: 7.0
+    review_min_score: 5.0
+    disqualified_max_score: 4.9
+
+pipeline_settings:
+  default_batch_size: 5
+  request_timeout_seconds: 30
+  max_retries: 3
+  default_reference_date: "auto"

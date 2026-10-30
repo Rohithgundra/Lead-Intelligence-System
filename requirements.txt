@@ -1,0 +1,9 @@
+# Lead Intelligence System - Requirements
+# The core system is built with 100% Python Standard Library (zero mandatory external dependencies).
+# Compatible with Python 3.8+ (including Python 3.11, 3.12, 3.13, 3.14, 3.15+).
+
+# Optional packages for enhanced development / alternate API clients:
+# pyyaml>=6.0
+# requests>=2.31.0
+# google-generativeai>=0.4.0
+# openai>=1.10.0

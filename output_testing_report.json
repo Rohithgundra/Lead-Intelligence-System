@@ -1,0 +1,2525 @@
+{
+  "metadata": {
+    "report_title": "Lead Intelligence System - Qualification & Outreach Report",
+    "generated_at": "2026-10-30T19:37:19.624219",
+    "model": "deterministic-rubric-v1",
+    "provider": "rule-based",
+    "system_version": "1.0.0"
+  },
+  "executive_summary": {
+    "total_processed": 20,
+    "qualified_count": 12,
+    "qualified_pct": 60.0,
+    "review_count": 2,
+    "review_pct": 10.0,
+    "disqualified_count": 6,
+    "disqualified_pct": 30.0,
+    "priority_distribution": {
+      "P1_HIGH": 9,
+      "P2_MEDIUM": 3,
+      "unassigned_or_review": 8
+    },
+    "business_roi": {
+      "manual_baseline_minutes_per_lead": 10.0,
+      "manual_qualification_hours_required": 3.3,
+      "automated_processing_time_seconds": 0.03,
+      "sdr_hours_saved": 3.3,
+      "time_saved_percentage": 100.0
+    },
+    "industry_distribution": {
+      "SaaS": 7,
+      "Consulting": 2,
+      "Unknown": 2,
+      "Retail": 2,
+      "Enterprise Software": 1,
+      "Manufacturing": 1,
+      "Technology": 1,
+      "Finance": 1,
+      "Agriculture": 1,
+      "Logistics": 1
+    },
+    "qualified_by_industry": {
+      "SaaS": 5,
+      "Retail": 2,
+      "Enterprise Software": 1,
+      "Finance": 1,
+      "Consulting": 1,
+      "Logistics": 1,
+      "Government": 1
+    },
+    "company_size_distribution": {
+      "Unknown / NA": 3,
+      "10000+ (Enterprise)": 1,
+      "1-9 (Micro/Solopreneur)": 4,
+      "50-249 (Mid-market lower)": 4,
+      "10-49 (Small)": 1,
+      "250-2500 (Mid-market sweet spot)": 6,
+      "2501-10000 (Upper mid-market)": 1
+    },
+    "source_distribution": {
+      "Inbound demo request": 7,
+      "Direct Inbound": 4,
+      "Sales call": 3,
+      "LinkedIn outreach": 2,
+      "Referral": 2,
+      "Webinar attendee": 1,
+      "Content download": 1
+    },
+    "common_disqualification_reasons": {
+      "Stale interaction (> 180 days)": 4,
+      "Micro-company / Solopreneur lack of budget": 1,
+      "Low aggregate qualification score (< 5.0/10)": 1
+    }
+  },
+  "priority_queue_qualified": [
+    {
+      "lead_id": 5,
+      "lead": {
+        "lead_id": 5,
+        "name": "Test_RecentEngagement",
+        "company": "Hot Lead Corp",
+        "company_size": 200,
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (SaaS), strong size (200), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (200) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Hot Lead Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_RecentEngagement,\n\nFollowing up on your recent demo request for Hot Lead Corp. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Hot Lead Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Hot Lead Corp's inbound pipeline",
+          "body": "Hi Test_RecentEngagement,\n\nI noticed your interest in accelerating your qualification pipeline. Given Hot Lead Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Hot Lead Corp's revenue org",
+          "body": "Hi Test_RecentEngagement,\n\nReaching out directly as Hot Lead Corp expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Hot Lead Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 9,
+      "lead": {
+        "lead_id": 9,
+        "name": "Test_MultipleInteractions",
+        "company": "Active Company",
+        "company_size": 500,
+        "industry": "Finance",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (Finance), strong size (500), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (500) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Finance' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Active Company <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MultipleInteractions,\n\nFollowing up on your recent demo request for Active Company. Many scaling Finance teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Active Company could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Active Company's inbound pipeline",
+          "body": "Hi Test_MultipleInteractions,\n\nI noticed your interest in accelerating your qualification pipeline. Given Active Company's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Finance mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Active Company's revenue org",
+          "body": "Hi Test_MultipleInteractions,\n\nReaching out directly as Active Company expands its footprint in Finance. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Active Company. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 11,
+      "lead": {
+        "lead_id": 11,
+        "name": "Test_HighValueMatch",
+        "company": "Perfect Fit Enterprise",
+        "company_size": 2000,
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (SaaS), strong size (2000), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (2,000) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Perfect Fit Enterprise <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_HighValueMatch,\n\nFollowing up on your recent demo request for Perfect Fit Enterprise. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Perfect Fit Enterprise could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Perfect Fit Enterprise's inbound pipeline",
+          "body": "Hi Test_HighValueMatch,\n\nI noticed your interest in accelerating your qualification pipeline. Given Perfect Fit Enterprise's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Perfect Fit Enterprise's revenue org",
+          "body": "Hi Test_HighValueMatch,\n\nReaching out directly as Perfect Fit Enterprise expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Perfect Fit Enterprise. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 20,
+      "lead": {
+        "lead_id": 20,
+        "name": "Test_SMBAverage",
+        "company": "Average SMB Co",
+        "company_size": 120,
+        "industry": "Retail",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-19",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (Retail), strong size (120), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (120) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Retail' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 1d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Average SMB Co <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_SMBAverage,\n\nFollowing up on your recent demo request for Average SMB Co. Many scaling Retail teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Average SMB Co could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Average SMB Co's inbound pipeline",
+          "body": "Hi Test_SMBAverage,\n\nI noticed your interest in accelerating your qualification pipeline. Given Average SMB Co's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Retail mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Average SMB Co's revenue org",
+          "body": "Hi Test_SMBAverage,\n\nReaching out directly as Average SMB Co expands its footprint in Retail. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Average SMB Co. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 13,
+      "lead": {
+        "lead_id": 13,
+        "name": "Test_MissingName",
+        "company": "Your Organization",
+        "company_size": 400,
+        "industry": "Consulting",
+        "source": "Sales call",
+        "last_interaction_date": "2024-01-19",
+        "data_quality_issues": [
+          "missing_company_name"
+        ]
+      },
+      "score": 9.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (9.0/10): Core ICP vertical (Consulting), strong size (400), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (400) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "'Consulting' is a Tier-2 growth sector with established workflow automation needs."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Direct sales call indicates bilateral conversation and engaged interest."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 1d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "your team <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MissingName,\n\nContinuing our discussion regarding your team's sales operations. Many scaling Consulting teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how your team could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating your team's inbound pipeline",
+          "body": "Hi Test_MissingName,\n\nI building on our recent conversation around pipeline velocity. Given your team's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Consulting mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for your team's revenue org",
+          "body": "Hi Test_MissingName,\n\nReaching out directly as your team expands its footprint in Consulting. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for your team. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 2,
+      "lead": {
+        "lead_id": 2,
+        "name": "Test_VeryLargeEnterprise",
+        "company": "Global Fortune 500 Corp",
+        "company_size": 50000,
+        "industry": "Enterprise Software",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 8.7,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.7/10): Core ICP vertical (Enterprise Software), strong size (50000), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.2,
+          "max_score": 2.5,
+          "reason": "Mega enterprise (50,000 FTE); high potential ACV but complex procurement cycles."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Enterprise Software' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Global Fortune 500 Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_VeryLargeEnterprise,\n\nFollowing up on your recent demo request for Global Fortune 500 Corp. Many scaling Enterprise Software teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Global Fortune 500 Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Global Fortune 500 Corp's inbound pipeline",
+          "body": "Hi Test_VeryLargeEnterprise,\n\nI noticed your interest in accelerating your qualification pipeline. Given Global Fortune 500 Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Enterprise Software mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Global Fortune 500 Corp's revenue org",
+          "body": "Hi Test_VeryLargeEnterprise,\n\nReaching out directly as Global Fortune 500 Corp expands its footprint in Enterprise Software. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Global Fortune 500 Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Strategic Enterprise (50,000 FTE): Route to Strategic Enterprise AE team."
+      ],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 1,
+      "lead": {
+        "lead_id": 1,
+        "name": "Test_MissingSize",
+        "company": "Test Inc",
+        "company_size": "Unknown",
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": [
+          "missing_company_size"
+        ]
+      },
+      "score": 8.5,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.5/10): Core ICP vertical (SaaS), strong size (target), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Company size unknown/missing; assigned neutral baseline (+1.0). Requires verification."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Test Inc <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MissingSize,\n\nFollowing up on your recent demo request for Test Inc. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Test Inc could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Test Inc's inbound pipeline",
+          "body": "Hi Test_MissingSize,\n\nI noticed your interest in accelerating your qualification pipeline. Given Test Inc's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Test Inc's revenue org",
+          "body": "Hi Test_MissingSize,\n\nReaching out directly as Test Inc expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Test Inc. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Missing company size: Verify headcount via LinkedIn/Clearbit before demo."
+      ],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 16,
+      "lead": {
+        "lead_id": 16,
+        "name": "Test_WeekOldInteraction",
+        "company": "Week Old Corp",
+        "company_size": 250,
+        "industry": "Logistics",
+        "source": "Webinar attendee",
+        "last_interaction_date": "2024-01-13",
+        "data_quality_issues": []
+      },
+      "score": 8.5,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.5/10): Core ICP vertical (Logistics), strong size (250), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (250) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "'Logistics' is a Tier-2 growth sector with established workflow automation needs."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.0,
+          "max_score": 3.0,
+          "reason": "Webinar attendee demonstrates active interest in problem domain."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 7d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Week Old Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_WeekOldInteraction,\n\nGlad you could attend our recent session on revenue acceleration. Many scaling Logistics teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Week Old Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Week Old Corp's inbound pipeline",
+          "body": "Hi Test_WeekOldInteraction,\n\nI saw you joined our webinar on modernizing B2B sales workflows. Given Week Old Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Logistics mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Week Old Corp's revenue org",
+          "body": "Hi Test_WeekOldInteraction,\n\nReaching out directly as Week Old Corp expands its footprint in Logistics. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Week Old Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 17,
+      "lead": {
+        "lead_id": 17,
+        "name": "Test_MidMarketSoft",
+        "company": "Mid Market Software",
+        "company_size": 1500,
+        "industry": "SaaS",
+        "source": "Content download",
+        "last_interaction_date": "2024-01-18",
+        "data_quality_issues": []
+      },
+      "score": 8.5,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.5/10): Core ICP vertical (SaaS), strong size (1500), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (1,500) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.5,
+          "max_score": 3.0,
+          "reason": "Content download reflects top-of-funnel research; requires qualification."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 2d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Mid Market Software <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MidMarketSoft,\n\nSaw you recently reviewed our guide on B2B lead acceleration. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Mid Market Software could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Mid Market Software's inbound pipeline",
+          "body": "Hi Test_MidMarketSoft,\n\nI wanted to share how other SaaS leaders are putting those insights into practice. Given Mid Market Software's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Mid Market Software's revenue org",
+          "body": "Hi Test_MidMarketSoft,\n\nReaching out directly as Mid Market Software expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Mid Market Software. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 10,
+      "lead": {
+        "lead_id": 10,
+        "name": "Test_NoSourceInfo",
+        "company": "Source Unknown Corp",
+        "company_size": 300,
+        "industry": "Retail",
+        "source": "Direct Inbound",
+        "last_interaction_date": "2024-01-18",
+        "data_quality_issues": [
+          "missing_or_unknown_source"
+        ]
+      },
+      "score": 8.2,
+      "decision": "QUALIFIED",
+      "priority": "P2_MEDIUM",
+      "primary_reason": "Solid qualified lead (8.2/10): Good alignment with mid-market parameters.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (300) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Retail' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 2d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Source Unknown Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_NoSourceInfo,\n\nConnecting with Source Unknown Corp regarding sales automation. Many scaling Retail teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Source Unknown Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Source Unknown Corp's inbound pipeline",
+          "body": "Hi Test_NoSourceInfo,\n\nI impressed by Source Unknown Corp's momentum in the Retail space. Given Source Unknown Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Retail mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Source Unknown Corp's revenue org",
+          "body": "Hi Test_NoSourceInfo,\n\nReaching out directly as Source Unknown Corp expands its footprint in Retail. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Source Unknown Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 8,
+      "lead": {
+        "lead_id": 8,
+        "name": "Test_VeryRecentSignup",
+        "company": "Brand New Startup",
+        "company_size": 2,
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 7.8,
+      "decision": "QUALIFIED",
+      "priority": "P2_MEDIUM",
+      "primary_reason": "Solid qualified lead (7.8/10): Good alignment with mid-market parameters.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (2 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Brand New Startup <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_VeryRecentSignup,\n\nFollowing up on your recent demo request for Brand New Startup. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Brand New Startup could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Brand New Startup's inbound pipeline",
+          "body": "Hi Test_VeryRecentSignup,\n\nI noticed your interest in accelerating your qualification pipeline. Given Brand New Startup's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Brand New Startup's revenue org",
+          "body": "Hi Test_VeryRecentSignup,\n\nReaching out directly as Brand New Startup expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Brand New Startup. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 19,
+      "lead": {
+        "lead_id": 19,
+        "name": "Test_GovernmentBuyer",
+        "company": "Government Tech",
+        "company_size": 3000,
+        "industry": "Government",
+        "source": "Sales call",
+        "last_interaction_date": "2024-01-17",
+        "data_quality_issues": []
+      },
+      "score": 7.3,
+      "decision": "QUALIFIED",
+      "priority": "P2_MEDIUM",
+      "primary_reason": "Solid qualified lead (7.3/10): Good alignment with mid-market parameters.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "Company size (3,000) is a strong scaling fit (50-99 or 2,501-5,000 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 0.8,
+          "max_score": 2.5,
+          "reason": "'Government' has historically low conversion / non-target alignment."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Direct sales call indicates bilateral conversation and engaged interest."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 3d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Government Tech <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_GovernmentBuyer,\n\nContinuing our discussion regarding Government Tech's sales operations. Many scaling Government teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Government Tech could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Government Tech's inbound pipeline",
+          "body": "Hi Test_GovernmentBuyer,\n\nI building on our recent conversation around pipeline velocity. Given Government Tech's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Government mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Government Tech's revenue org",
+          "body": "Hi Test_GovernmentBuyer,\n\nReaching out directly as Government Tech expands its footprint in Government. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Government Tech. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    }
+  ],
+  "review_queue_flagged": [
+    {
+      "lead_id": 7,
+      "lead": {
+        "lead_id": 7,
+        "name": "Test_UnknownIndustry",
+        "company": "Mysterious Startup",
+        "company_size": 15,
+        "industry": "Unknown",
+        "source": "Referral",
+        "last_interaction_date": "2024-01-19",
+        "data_quality_issues": [
+          "unmapped_industry"
+        ]
+      },
+      "score": 6.5,
+      "decision": "REVIEW",
+      "priority": null,
+      "primary_reason": "Moderate fit (6.5/10) flagged for quick 60-second SDR review.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Early stage startup size (15 FTE); budget may be constrained."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Industry unmapped/missing; assigned neutral baseline (+1.0). Flagged for review."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Referral channel carries high trust and strong conversion probability."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 1d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Mysterious Startup <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_UnknownIndustry,\n\nReaching out following an executive referral regarding Mysterious Startup. Many scaling B2B SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Mysterious Startup could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Mysterious Startup's inbound pipeline",
+          "body": "Hi Test_UnknownIndustry,\n\nI our mutual partners highlighted Mysterious Startup's impressive growth in B2B SaaS. Given Mysterious Startup's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar B2B SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Mysterious Startup's revenue org",
+          "body": "Hi Test_UnknownIndustry,\n\nReaching out directly as Mysterious Startup expands its footprint in B2B SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Mysterious Startup. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Unmapped industry: SDR to verify vertical alignment.",
+        "Borderline score (6.5/10): Balance of positive signals and friction factors."
+      ],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 15,
+      "lead": {
+        "lead_id": 15,
+        "name": "Test_PartialData",
+        "company": "Tech Partial",
+        "company_size": "Unknown",
+        "industry": "SaaS",
+        "source": "Direct Inbound",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": [
+          "missing_company_size",
+          "missing_or_unknown_source"
+        ]
+      },
+      "score": 6.7,
+      "decision": "REVIEW",
+      "priority": null,
+      "primary_reason": "Moderate fit (6.7/10) flagged for quick 60-second SDR review.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Company size unknown/missing; assigned neutral baseline (+1.0). Requires verification."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Tech Partial <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_PartialData,\n\nConnecting with Tech Partial regarding sales automation. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Tech Partial could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Tech Partial's inbound pipeline",
+          "body": "Hi Test_PartialData,\n\nI impressed by Tech Partial's momentum in the SaaS space. Given Tech Partial's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Tech Partial's revenue org",
+          "body": "Hi Test_PartialData,\n\nReaching out directly as Tech Partial expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Tech Partial. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Missing company size: Verify headcount via LinkedIn/Clearbit before demo.",
+        "Borderline score (6.7/10): Balance of positive signals and friction factors."
+      ],
+      "processed_by": "deterministic_rubric"
+    }
+  ],
+  "disqualified_archive": [
+    {
+      "lead_id": 3,
+      "lead": {
+        "lead_id": 3,
+        "name": "Test_Solo",
+        "company": "John Doe Consulting",
+        "company_size": 1,
+        "industry": "Consulting",
+        "source": "LinkedIn outreach",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 5.3,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Micro-organization (1 FTE) acquired via low-intent channel (LinkedIn outreach). Below ICP threshold.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (1 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "'Consulting' is a Tier-2 growth sector with established workflow automation needs."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.0,
+          "max_score": 3.0,
+          "reason": "Outbound LinkedIn touchpoint; unproven intent, requires active nurturing."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 4,
+      "lead": {
+        "lead_id": 4,
+        "name": "Test_StaleInteraction",
+        "company": "Old Company Inc",
+        "company_size": 100,
+        "industry": "Manufacturing",
+        "source": "Sales call",
+        "last_interaction_date": "2022-06-15",
+        "data_quality_issues": []
+      },
+      "score": 6.5,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (584 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (100) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 1.5,
+          "max_score": 2.5,
+          "reason": "'Manufacturing' is a secondary sector with longer sales cycle."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Direct sales call indicates bilateral conversation and engaged interest."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.0,
+          "max_score": 2.0,
+          "reason": "Touched 584d ago (>180 days): Stale lead exceeding viable sales window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 6,
+      "lead": {
+        "lead_id": 6,
+        "name": "Test_MissingDate",
+        "company": "Mystery Co",
+        "company_size": 150,
+        "industry": "Technology",
+        "source": "Direct Inbound",
+        "last_interaction_date": "Unknown",
+        "data_quality_issues": [
+          "missing_or_unknown_source",
+          "missing_last_interaction_date"
+        ]
+      },
+      "score": 6.7,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (999 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (150) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Technology' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.5,
+          "max_score": 2.0,
+          "reason": "Missing interaction date; assigned conservative recency score (+0.5)."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 12,
+      "lead": {
+        "lead_id": 12,
+        "name": "Test_LowValueNiche",
+        "company": "Niche Small Op",
+        "company_size": 5,
+        "industry": "Agriculture",
+        "source": "LinkedIn outreach",
+        "last_interaction_date": "2024-01-15",
+        "data_quality_issues": []
+      },
+      "score": 4.1,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Overall qualification score (4.1/10) below minimum threshold of 5.0.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (5 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 0.8,
+          "max_score": 2.5,
+          "reason": "'Agriculture' has historically low conversion / non-target alignment."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.0,
+          "max_score": 3.0,
+          "reason": "Outbound LinkedIn touchpoint; unproven intent, requires active nurturing."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 5d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 14,
+      "lead": {
+        "lead_id": 14,
+        "name": "Test_NameOnly",
+        "company": "James Wilson",
+        "company_size": "Unknown",
+        "industry": "Unknown",
+        "source": "Direct Inbound",
+        "last_interaction_date": "Unknown",
+        "data_quality_issues": [
+          "missing_company_size",
+          "unmapped_industry",
+          "missing_or_unknown_source",
+          "missing_last_interaction_date"
+        ]
+      },
+      "score": 3.7,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (999 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Company size unknown/missing; assigned neutral baseline (+1.0). Requires verification."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Industry unmapped/missing; assigned neutral baseline (+1.0). Flagged for review."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.5,
+          "max_score": 2.0,
+          "reason": "Missing interaction date; assigned conservative recency score (+0.5)."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 18,
+      "lead": {
+        "lead_id": 18,
+        "name": "Test_StartupShutdown",
+        "company": "Failed Startup",
+        "company_size": 8,
+        "industry": "SaaS",
+        "source": "Referral",
+        "last_interaction_date": "2023-05-01",
+        "data_quality_issues": []
+      },
+      "score": 5.3,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (264 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (8 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Referral channel carries high trust and strong conversion probability."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.0,
+          "max_score": 2.0,
+          "reason": "Touched 264d ago (>180 days): Stale lead exceeding viable sales window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    }
+  ],
+  "sample_outreach_messages": [
+    {
+      "lead_name": "Test_RecentEngagement",
+      "company": "Hot Lead Corp",
+      "industry": "SaaS",
+      "source": "Inbound demo request",
+      "score": 10.0,
+      "priority": "P1_HIGH",
+      "primary_variant": "Pain_Point_ROI",
+      "subject": "Hot Lead Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+      "body": "Hi Test_RecentEngagement,\n\nFollowing up on your recent demo request for Hot Lead Corp. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Hot Lead Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+    },
+    {
+      "lead_name": "Test_MultipleInteractions",
+      "company": "Active Company",
+      "industry": "Finance",
+      "source": "Inbound demo request",
+      "score": 10.0,
+      "priority": "P1_HIGH",
+      "primary_variant": "Pain_Point_ROI",
+      "subject": "Active Company <> Lead Intelligence: Cutting 95% qualification drop-off",
+      "body": "Hi Test_MultipleInteractions,\n\nFollowing up on your recent demo request for Active Company. Many scaling Finance teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Active Company could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+    },
+    {
+      "lead_name": "Test_SMBAverage",
+      "company": "Average SMB Co",
+      "industry": "Retail",
+      "source": "Inbound demo request",
+      "score": 10.0,
+      "priority": "P1_HIGH",
+      "primary_variant": "Pain_Point_ROI",
+      "subject": "Average SMB Co <> Lead Intelligence: Cutting 95% qualification drop-off",
+      "body": "Hi Test_SMBAverage,\n\nFollowing up on your recent demo request for Average SMB Co. Many scaling Retail teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Average SMB Co could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+    },
+    {
+      "lead_name": "Test_MissingName",
+      "company": "Your Organization",
+      "industry": "Consulting",
+      "source": "Sales call",
+      "score": 9.0,
+      "priority": "P1_HIGH",
+      "primary_variant": "Pain_Point_ROI",
+      "subject": "your team <> Lead Intelligence: Cutting 95% qualification drop-off",
+      "body": "Hi Test_MissingName,\n\nContinuing our discussion regarding your team's sales operations. Many scaling Consulting teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how your team could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+    },
+    {
+      "lead_name": "Test_VeryLargeEnterprise",
+      "company": "Global Fortune 500 Corp",
+      "industry": "Enterprise Software",
+      "source": "Inbound demo request",
+      "score": 8.7,
+      "priority": "P1_HIGH",
+      "primary_variant": "Pain_Point_ROI",
+      "subject": "Global Fortune 500 Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+      "body": "Hi Test_VeryLargeEnterprise,\n\nFollowing up on your recent demo request for Global Fortune 500 Corp. Many scaling Enterprise Software teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Global Fortune 500 Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+    }
+  ],
+  "all_evaluations": [
+    {
+      "lead_id": 1,
+      "lead": {
+        "lead_id": 1,
+        "name": "Test_MissingSize",
+        "company": "Test Inc",
+        "company_size": "Unknown",
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": [
+          "missing_company_size"
+        ]
+      },
+      "score": 8.5,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.5/10): Core ICP vertical (SaaS), strong size (target), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Company size unknown/missing; assigned neutral baseline (+1.0). Requires verification."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Test Inc <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MissingSize,\n\nFollowing up on your recent demo request for Test Inc. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Test Inc could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Test Inc's inbound pipeline",
+          "body": "Hi Test_MissingSize,\n\nI noticed your interest in accelerating your qualification pipeline. Given Test Inc's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Test Inc's revenue org",
+          "body": "Hi Test_MissingSize,\n\nReaching out directly as Test Inc expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Test Inc. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Missing company size: Verify headcount via LinkedIn/Clearbit before demo."
+      ],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 2,
+      "lead": {
+        "lead_id": 2,
+        "name": "Test_VeryLargeEnterprise",
+        "company": "Global Fortune 500 Corp",
+        "company_size": 50000,
+        "industry": "Enterprise Software",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 8.7,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.7/10): Core ICP vertical (Enterprise Software), strong size (50000), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.2,
+          "max_score": 2.5,
+          "reason": "Mega enterprise (50,000 FTE); high potential ACV but complex procurement cycles."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Enterprise Software' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Global Fortune 500 Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_VeryLargeEnterprise,\n\nFollowing up on your recent demo request for Global Fortune 500 Corp. Many scaling Enterprise Software teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Global Fortune 500 Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Global Fortune 500 Corp's inbound pipeline",
+          "body": "Hi Test_VeryLargeEnterprise,\n\nI noticed your interest in accelerating your qualification pipeline. Given Global Fortune 500 Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Enterprise Software mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Global Fortune 500 Corp's revenue org",
+          "body": "Hi Test_VeryLargeEnterprise,\n\nReaching out directly as Global Fortune 500 Corp expands its footprint in Enterprise Software. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Global Fortune 500 Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Strategic Enterprise (50,000 FTE): Route to Strategic Enterprise AE team."
+      ],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 3,
+      "lead": {
+        "lead_id": 3,
+        "name": "Test_Solo",
+        "company": "John Doe Consulting",
+        "company_size": 1,
+        "industry": "Consulting",
+        "source": "LinkedIn outreach",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 5.3,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Micro-organization (1 FTE) acquired via low-intent channel (LinkedIn outreach). Below ICP threshold.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (1 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "'Consulting' is a Tier-2 growth sector with established workflow automation needs."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.0,
+          "max_score": 3.0,
+          "reason": "Outbound LinkedIn touchpoint; unproven intent, requires active nurturing."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 4,
+      "lead": {
+        "lead_id": 4,
+        "name": "Test_StaleInteraction",
+        "company": "Old Company Inc",
+        "company_size": 100,
+        "industry": "Manufacturing",
+        "source": "Sales call",
+        "last_interaction_date": "2022-06-15",
+        "data_quality_issues": []
+      },
+      "score": 6.5,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (584 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (100) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 1.5,
+          "max_score": 2.5,
+          "reason": "'Manufacturing' is a secondary sector with longer sales cycle."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Direct sales call indicates bilateral conversation and engaged interest."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.0,
+          "max_score": 2.0,
+          "reason": "Touched 584d ago (>180 days): Stale lead exceeding viable sales window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 5,
+      "lead": {
+        "lead_id": 5,
+        "name": "Test_RecentEngagement",
+        "company": "Hot Lead Corp",
+        "company_size": 200,
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (SaaS), strong size (200), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (200) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Hot Lead Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_RecentEngagement,\n\nFollowing up on your recent demo request for Hot Lead Corp. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Hot Lead Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Hot Lead Corp's inbound pipeline",
+          "body": "Hi Test_RecentEngagement,\n\nI noticed your interest in accelerating your qualification pipeline. Given Hot Lead Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Hot Lead Corp's revenue org",
+          "body": "Hi Test_RecentEngagement,\n\nReaching out directly as Hot Lead Corp expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Hot Lead Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 6,
+      "lead": {
+        "lead_id": 6,
+        "name": "Test_MissingDate",
+        "company": "Mystery Co",
+        "company_size": 150,
+        "industry": "Technology",
+        "source": "Direct Inbound",
+        "last_interaction_date": "Unknown",
+        "data_quality_issues": [
+          "missing_or_unknown_source",
+          "missing_last_interaction_date"
+        ]
+      },
+      "score": 6.7,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (999 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (150) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Technology' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.5,
+          "max_score": 2.0,
+          "reason": "Missing interaction date; assigned conservative recency score (+0.5)."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 7,
+      "lead": {
+        "lead_id": 7,
+        "name": "Test_UnknownIndustry",
+        "company": "Mysterious Startup",
+        "company_size": 15,
+        "industry": "Unknown",
+        "source": "Referral",
+        "last_interaction_date": "2024-01-19",
+        "data_quality_issues": [
+          "unmapped_industry"
+        ]
+      },
+      "score": 6.5,
+      "decision": "REVIEW",
+      "priority": null,
+      "primary_reason": "Moderate fit (6.5/10) flagged for quick 60-second SDR review.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Early stage startup size (15 FTE); budget may be constrained."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Industry unmapped/missing; assigned neutral baseline (+1.0). Flagged for review."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Referral channel carries high trust and strong conversion probability."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 1d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Mysterious Startup <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_UnknownIndustry,\n\nReaching out following an executive referral regarding Mysterious Startup. Many scaling B2B SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Mysterious Startup could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Mysterious Startup's inbound pipeline",
+          "body": "Hi Test_UnknownIndustry,\n\nI our mutual partners highlighted Mysterious Startup's impressive growth in B2B SaaS. Given Mysterious Startup's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar B2B SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Mysterious Startup's revenue org",
+          "body": "Hi Test_UnknownIndustry,\n\nReaching out directly as Mysterious Startup expands its footprint in B2B SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Mysterious Startup. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Unmapped industry: SDR to verify vertical alignment.",
+        "Borderline score (6.5/10): Balance of positive signals and friction factors."
+      ],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 8,
+      "lead": {
+        "lead_id": 8,
+        "name": "Test_VeryRecentSignup",
+        "company": "Brand New Startup",
+        "company_size": 2,
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 7.8,
+      "decision": "QUALIFIED",
+      "priority": "P2_MEDIUM",
+      "primary_reason": "Solid qualified lead (7.8/10): Good alignment with mid-market parameters.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (2 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Brand New Startup <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_VeryRecentSignup,\n\nFollowing up on your recent demo request for Brand New Startup. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Brand New Startup could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Brand New Startup's inbound pipeline",
+          "body": "Hi Test_VeryRecentSignup,\n\nI noticed your interest in accelerating your qualification pipeline. Given Brand New Startup's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Brand New Startup's revenue org",
+          "body": "Hi Test_VeryRecentSignup,\n\nReaching out directly as Brand New Startup expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Brand New Startup. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 9,
+      "lead": {
+        "lead_id": 9,
+        "name": "Test_MultipleInteractions",
+        "company": "Active Company",
+        "company_size": 500,
+        "industry": "Finance",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (Finance), strong size (500), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (500) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Finance' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Active Company <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MultipleInteractions,\n\nFollowing up on your recent demo request for Active Company. Many scaling Finance teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Active Company could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Active Company's inbound pipeline",
+          "body": "Hi Test_MultipleInteractions,\n\nI noticed your interest in accelerating your qualification pipeline. Given Active Company's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Finance mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Active Company's revenue org",
+          "body": "Hi Test_MultipleInteractions,\n\nReaching out directly as Active Company expands its footprint in Finance. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Active Company. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 10,
+      "lead": {
+        "lead_id": 10,
+        "name": "Test_NoSourceInfo",
+        "company": "Source Unknown Corp",
+        "company_size": 300,
+        "industry": "Retail",
+        "source": "Direct Inbound",
+        "last_interaction_date": "2024-01-18",
+        "data_quality_issues": [
+          "missing_or_unknown_source"
+        ]
+      },
+      "score": 8.2,
+      "decision": "QUALIFIED",
+      "priority": "P2_MEDIUM",
+      "primary_reason": "Solid qualified lead (8.2/10): Good alignment with mid-market parameters.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (300) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Retail' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 2d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Source Unknown Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_NoSourceInfo,\n\nConnecting with Source Unknown Corp regarding sales automation. Many scaling Retail teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Source Unknown Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Source Unknown Corp's inbound pipeline",
+          "body": "Hi Test_NoSourceInfo,\n\nI impressed by Source Unknown Corp's momentum in the Retail space. Given Source Unknown Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Retail mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Source Unknown Corp's revenue org",
+          "body": "Hi Test_NoSourceInfo,\n\nReaching out directly as Source Unknown Corp expands its footprint in Retail. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Source Unknown Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 11,
+      "lead": {
+        "lead_id": 11,
+        "name": "Test_HighValueMatch",
+        "company": "Perfect Fit Enterprise",
+        "company_size": 2000,
+        "industry": "SaaS",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (SaaS), strong size (2000), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (2,000) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Perfect Fit Enterprise <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_HighValueMatch,\n\nFollowing up on your recent demo request for Perfect Fit Enterprise. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Perfect Fit Enterprise could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Perfect Fit Enterprise's inbound pipeline",
+          "body": "Hi Test_HighValueMatch,\n\nI noticed your interest in accelerating your qualification pipeline. Given Perfect Fit Enterprise's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Perfect Fit Enterprise's revenue org",
+          "body": "Hi Test_HighValueMatch,\n\nReaching out directly as Perfect Fit Enterprise expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Perfect Fit Enterprise. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 12,
+      "lead": {
+        "lead_id": 12,
+        "name": "Test_LowValueNiche",
+        "company": "Niche Small Op",
+        "company_size": 5,
+        "industry": "Agriculture",
+        "source": "LinkedIn outreach",
+        "last_interaction_date": "2024-01-15",
+        "data_quality_issues": []
+      },
+      "score": 4.1,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Overall qualification score (4.1/10) below minimum threshold of 5.0.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (5 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 0.8,
+          "max_score": 2.5,
+          "reason": "'Agriculture' has historically low conversion / non-target alignment."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.0,
+          "max_score": 3.0,
+          "reason": "Outbound LinkedIn touchpoint; unproven intent, requires active nurturing."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 5d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 13,
+      "lead": {
+        "lead_id": 13,
+        "name": "Test_MissingName",
+        "company": "Your Organization",
+        "company_size": 400,
+        "industry": "Consulting",
+        "source": "Sales call",
+        "last_interaction_date": "2024-01-19",
+        "data_quality_issues": [
+          "missing_company_name"
+        ]
+      },
+      "score": 9.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (9.0/10): Core ICP vertical (Consulting), strong size (400), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (400) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "'Consulting' is a Tier-2 growth sector with established workflow automation needs."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Direct sales call indicates bilateral conversation and engaged interest."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 1d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "your team <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MissingName,\n\nContinuing our discussion regarding your team's sales operations. Many scaling Consulting teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how your team could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating your team's inbound pipeline",
+          "body": "Hi Test_MissingName,\n\nI building on our recent conversation around pipeline velocity. Given your team's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Consulting mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for your team's revenue org",
+          "body": "Hi Test_MissingName,\n\nReaching out directly as your team expands its footprint in Consulting. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for your team. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 14,
+      "lead": {
+        "lead_id": 14,
+        "name": "Test_NameOnly",
+        "company": "James Wilson",
+        "company_size": "Unknown",
+        "industry": "Unknown",
+        "source": "Direct Inbound",
+        "last_interaction_date": "Unknown",
+        "data_quality_issues": [
+          "missing_company_size",
+          "unmapped_industry",
+          "missing_or_unknown_source",
+          "missing_last_interaction_date"
+        ]
+      },
+      "score": 3.7,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (999 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Company size unknown/missing; assigned neutral baseline (+1.0). Requires verification."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Industry unmapped/missing; assigned neutral baseline (+1.0). Flagged for review."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.5,
+          "max_score": 2.0,
+          "reason": "Missing interaction date; assigned conservative recency score (+0.5)."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 15,
+      "lead": {
+        "lead_id": 15,
+        "name": "Test_PartialData",
+        "company": "Tech Partial",
+        "company_size": "Unknown",
+        "industry": "SaaS",
+        "source": "Direct Inbound",
+        "last_interaction_date": "2024-01-20",
+        "data_quality_issues": [
+          "missing_company_size",
+          "missing_or_unknown_source"
+        ]
+      },
+      "score": 6.7,
+      "decision": "REVIEW",
+      "priority": null,
+      "primary_reason": "Moderate fit (6.7/10) flagged for quick 60-second SDR review.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 1.0,
+          "max_score": 2.5,
+          "reason": "Company size unknown/missing; assigned neutral baseline (+1.0). Requires verification."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.2,
+          "max_score": 3.0,
+          "reason": "Channel 'Direct Inbound' has unspecified intent; assigned baseline (+1.2)."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 0d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Tech Partial <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_PartialData,\n\nConnecting with Tech Partial regarding sales automation. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Tech Partial could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Tech Partial's inbound pipeline",
+          "body": "Hi Test_PartialData,\n\nI impressed by Tech Partial's momentum in the SaaS space. Given Tech Partial's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Tech Partial's revenue org",
+          "body": "Hi Test_PartialData,\n\nReaching out directly as Tech Partial expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Tech Partial. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "Missing company size: Verify headcount via LinkedIn/Clearbit before demo.",
+        "Borderline score (6.7/10): Balance of positive signals and friction factors."
+      ],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 16,
+      "lead": {
+        "lead_id": 16,
+        "name": "Test_WeekOldInteraction",
+        "company": "Week Old Corp",
+        "company_size": 250,
+        "industry": "Logistics",
+        "source": "Webinar attendee",
+        "last_interaction_date": "2024-01-13",
+        "data_quality_issues": []
+      },
+      "score": 8.5,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.5/10): Core ICP vertical (Logistics), strong size (250), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (250) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "'Logistics' is a Tier-2 growth sector with established workflow automation needs."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.0,
+          "max_score": 3.0,
+          "reason": "Webinar attendee demonstrates active interest in problem domain."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 7d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Week Old Corp <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_WeekOldInteraction,\n\nGlad you could attend our recent session on revenue acceleration. Many scaling Logistics teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Week Old Corp could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Week Old Corp's inbound pipeline",
+          "body": "Hi Test_WeekOldInteraction,\n\nI saw you joined our webinar on modernizing B2B sales workflows. Given Week Old Corp's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Logistics mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Week Old Corp's revenue org",
+          "body": "Hi Test_WeekOldInteraction,\n\nReaching out directly as Week Old Corp expands its footprint in Logistics. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Week Old Corp. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 17,
+      "lead": {
+        "lead_id": 17,
+        "name": "Test_MidMarketSoft",
+        "company": "Mid Market Software",
+        "company_size": 1500,
+        "industry": "SaaS",
+        "source": "Content download",
+        "last_interaction_date": "2024-01-18",
+        "data_quality_issues": []
+      },
+      "score": 8.5,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (8.5/10): Core ICP vertical (SaaS), strong size (1500), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (1,500) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 1.5,
+          "max_score": 3.0,
+          "reason": "Content download reflects top-of-funnel research; requires qualification."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 2d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Mid Market Software <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_MidMarketSoft,\n\nSaw you recently reviewed our guide on B2B lead acceleration. Many scaling SaaS teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Mid Market Software could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Mid Market Software's inbound pipeline",
+          "body": "Hi Test_MidMarketSoft,\n\nI wanted to share how other SaaS leaders are putting those insights into practice. Given Mid Market Software's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar SaaS mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Mid Market Software's revenue org",
+          "body": "Hi Test_MidMarketSoft,\n\nReaching out directly as Mid Market Software expands its footprint in SaaS. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Mid Market Software. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 18,
+      "lead": {
+        "lead_id": 18,
+        "name": "Test_StartupShutdown",
+        "company": "Failed Startup",
+        "company_size": 8,
+        "industry": "SaaS",
+        "source": "Referral",
+        "last_interaction_date": "2023-05-01",
+        "data_quality_issues": []
+      },
+      "score": 5.3,
+      "decision": "DISQUALIFIED",
+      "priority": null,
+      "primary_reason": "Stale interaction (264 days ago). Lead intent has decayed beyond acceptable window.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 0.3,
+          "max_score": 2.5,
+          "reason": "Micro business/solopreneur (8 FTE); below minimum economic viability."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'SaaS' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Referral channel carries high trust and strong conversion probability."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 0.0,
+          "max_score": 2.0,
+          "reason": "Touched 264d ago (>180 days): Stale lead exceeding viable sales window."
+        }
+      },
+      "outreach_messages": [],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 19,
+      "lead": {
+        "lead_id": 19,
+        "name": "Test_GovernmentBuyer",
+        "company": "Government Tech",
+        "company_size": 3000,
+        "industry": "Government",
+        "source": "Sales call",
+        "last_interaction_date": "2024-01-17",
+        "data_quality_issues": []
+      },
+      "score": 7.3,
+      "decision": "QUALIFIED",
+      "priority": "P2_MEDIUM",
+      "primary_reason": "Solid qualified lead (7.3/10): Good alignment with mid-market parameters.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.0,
+          "max_score": 2.5,
+          "reason": "Company size (3,000) is a strong scaling fit (50-99 or 2,501-5,000 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 0.8,
+          "max_score": 2.5,
+          "reason": "'Government' has historically low conversion / non-target alignment."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 2.5,
+          "max_score": 3.0,
+          "reason": "Direct sales call indicates bilateral conversation and engaged interest."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 3d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Government Tech <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_GovernmentBuyer,\n\nContinuing our discussion regarding Government Tech's sales operations. Many scaling Government teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Government Tech could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Government Tech's inbound pipeline",
+          "body": "Hi Test_GovernmentBuyer,\n\nI building on our recent conversation around pipeline velocity. Given Government Tech's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Government mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Government Tech's revenue org",
+          "body": "Hi Test_GovernmentBuyer,\n\nReaching out directly as Government Tech expands its footprint in Government. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Government Tech. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    },
+    {
+      "lead_id": 20,
+      "lead": {
+        "lead_id": 20,
+        "name": "Test_SMBAverage",
+        "company": "Average SMB Co",
+        "company_size": 120,
+        "industry": "Retail",
+        "source": "Inbound demo request",
+        "last_interaction_date": "2024-01-19",
+        "data_quality_issues": []
+      },
+      "score": 10.0,
+      "decision": "QUALIFIED",
+      "priority": "P1_HIGH",
+      "primary_reason": "High-priority fit (10.0/10): Core ICP vertical (Retail), strong size (120), and high-intent source.",
+      "factor_breakdown": {
+        "company_size_fit": {
+          "factor_name": "company_size_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "Company size (120) matches ideal mid-market ICP sweet spot (100-2,500 FTE)."
+        },
+        "industry_fit": {
+          "factor_name": "industry_fit",
+          "score": 2.5,
+          "max_score": 2.5,
+          "reason": "'Retail' is a Tier-1 core vertical with high SaaS adoption and tech maturity."
+        },
+        "source_intent": {
+          "factor_name": "source_intent",
+          "score": 3.0,
+          "max_score": 3.0,
+          "reason": "Inbound demo request represents active, high-intent buyer hand-raising."
+        },
+        "engagement_recency": {
+          "factor_name": "engagement_recency",
+          "score": 2.0,
+          "max_score": 2.0,
+          "reason": "Touched 1d ago (<= 7 days): Hot lead in prime conversion window."
+        }
+      },
+      "outreach_messages": [
+        {
+          "variant": "Pain_Point_ROI",
+          "subject": "Average SMB Co <> Lead Intelligence: Cutting 95% qualification drop-off",
+          "body": "Hi Test_SMBAverage,\n\nFollowing up on your recent demo request for Average SMB Co. Many scaling Retail teams tell us their SDRs spend 8-12 minutes per inbound lead manually researching fit—resulting in slow response times and missed opportunities.\n\nWe built an automated Lead Intelligence engine that pre-qualifies inbound prospects in seconds, surfaces high-intent buyers, and drafts personalized outreach automatically.\n\nWould you be open to a 10-minute briefing next Tuesday to see how Average SMB Co could recover 15+ hours per SDR weekly?\n\nBest regards,\nAntigravity Sales Team"
+        },
+        {
+          "variant": "Direct_Value_Prop",
+          "subject": "Accelerating Average SMB Co's inbound pipeline",
+          "body": "Hi Test_SMBAverage,\n\nI noticed your interest in accelerating your qualification pipeline. Given Average SMB Co's current trajectory, ensuring every high-value prospect receives immediate, personalized engagement is critical.\n\nOur platform helped similar Retail mid-market teams increase their lead-to-opportunity conversion by 3.2x while cutting manual qualification overhead to zero.\n\nDo you have 15 minutes this Thursday afternoon for a quick look at the workflow?\n\nBest,\nAntigravity Growth Team"
+        },
+        {
+          "variant": "Executive_Briefing",
+          "subject": "Strategic efficiency for Average SMB Co's revenue org",
+          "body": "Hi Test_SMBAverage,\n\nReaching out directly as Average SMB Co expands its footprint in Retail. Mid-market revenue leaders are under pressure to do more with leaner teams without sacrificing pipeline velocity.\n\nWe've engineered a continuous qualification framework that sequences outreach based on live intent and account fit, eliminating the 95% drop-off typical of manual SDR workflows.\n\nI've put together a 1-page executive brief tailored for Average SMB Co. Would you prefer I send that over or would a brief 10-minute chat be easier?\n\nWarmly,\nAntigravity Enterprise Solutions"
+        }
+      ],
+      "needs_review": false,
+      "review_reasons": [],
+      "processed_by": "deterministic_rubric"
+    }
+  ]
+}
