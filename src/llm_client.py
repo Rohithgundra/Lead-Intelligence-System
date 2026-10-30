@@ -17,7 +17,30 @@ from typing import List, Dict, Any, Optional
 from src.models import Lead, LeadEvaluation, FactorScore, OutreachMessage
 from src.rubric import QualificationRubric
 
+def load_dotenv(env_path=".env"):
+    """Load key-value pairs from .env file into os.environ if not already present."""
+    if not os.path.exists(env_path):
+        return
+    try:
+        with open(env_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, val = line.split("=", 1)
+                key = key.strip()
+                val = val.strip().strip("'\"")
+                if key and key not in os.environ:
+                    os.environ[key] = val
+    except Exception:
+        pass
+
+
+# Automatically load .env on module import
+load_dotenv()
 logger = logging.getLogger(__name__)
+
+
 
 
 SYSTEM_PROMPT = """You are an expert Forward Deployed AI Engineer and Sales Qualification Intelligence engine for a mid-market B2B SaaS company.
@@ -122,19 +145,41 @@ class LLMBatchClient:
         self.max_retries = max_retries
         self.rubric = QualificationRubric(reference_date)
 
+        # Check LLM_PROVIDER from environment if provider is 'auto' or not given
+        env_provider = os.getenv("LLM_PROVIDER")
+        if (not provider or provider.lower() == "auto") and env_provider:
+            provider = env_provider.lower().strip()
+
         # Detect provider and credentials
-        self.api_key = api_key or os.getenv("GEMINI_API_KEY") or os.getenv("OPENAI_API_KEY") or os.getenv("GROQ_API_KEY")
         self.provider = provider.lower() if provider else "auto"
+        if self.provider == "groq":
+            self.api_key = api_key or os.getenv("GROQ_API_KEY")
+        elif self.provider == "gemini":
+            self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        elif self.provider == "openai":
+            self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+        elif self.provider in ("claude", "anthropic"):
+            self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
+        else:
+            self.api_key = (
+                api_key
+                or os.getenv("GROQ_API_KEY")
+                or os.getenv("GEMINI_API_KEY")
+                or os.getenv("OPENAI_API_KEY")
+                or os.getenv("ANTHROPIC_API_KEY")
+            )
 
         if self.provider == "auto":
-            if os.getenv("GEMINI_API_KEY"):
+            if os.getenv("GROQ_API_KEY"):
+                self.provider = "groq"
+            elif os.getenv("GEMINI_API_KEY"):
                 self.provider = "gemini"
             elif os.getenv("OPENAI_API_KEY"):
                 self.provider = "openai"
-            elif os.getenv("GROQ_API_KEY"):
-                self.provider = "groq"
+            elif os.getenv("ANTHROPIC_API_KEY"):
+                self.provider = "claude"
             elif self.api_key:
-                self.provider = "gemini"
+                self.provider = "groq"
             else:
                 self.provider = "rule-based"
 
@@ -144,9 +189,11 @@ class LLMBatchClient:
         elif self.provider == "gemini":
             self.model = "gemini-1.5-flash"
         elif self.provider == "groq":
-            self.model = "llama-3.1-8b-instant"
+            self.model = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
         elif self.provider == "openai":
             self.model = "gpt-4o-mini"
+        elif self.provider in ("claude", "anthropic"):
+            self.model = "claude-3-haiku-20240307"
         else:
             self.model = "deterministic-rubric-v1"
 
@@ -200,6 +247,8 @@ class LLMBatchClient:
                     return self._call_gemini_api(prompt)
                 elif self.provider in ("openai", "groq"):
                     return self._call_openai_compatible_api(prompt)
+                elif self.provider in ("claude", "anthropic"):
+                    return self._call_claude_api(prompt)
                 else:
                     return None
             except urllib.error.HTTPError as e:
@@ -207,7 +256,16 @@ class LLMBatchClient:
                 err_msg = e.read().decode("utf-8", errors="replace")
                 logger.warning(f"HTTP {status} on attempt {attempt}/{self.max_retries}: {err_msg[:200]}")
                 if status in (429, 500, 502, 503, 504) and attempt < self.max_retries:
-                    time.sleep(backoff)
+                    retry_header = getattr(e, "headers", {}).get("retry-after") if hasattr(e, "headers") else None
+                    if retry_header:
+                        try:
+                            sleep_time = float(retry_header) + 1.0
+                        except ValueError:
+                            sleep_time = backoff
+                    else:
+                        sleep_time = backoff
+                    logger.info(f"Rate limited or server busy. Waiting {sleep_time:.1f}s before retry {attempt + 1}...")
+                    time.sleep(sleep_time)
                     backoff *= 2
                 else:
                     break
@@ -240,7 +298,10 @@ class LLMBatchClient:
         req = urllib.request.Request(
             url,
             data=data,
-            headers={"Content-Type": "application/json"},
+            headers={
+                "Content-Type": "application/json",
+                "User-Agent": "LeadIntelligenceSystem/1.0"
+            },
             method="POST"
         )
         with urllib.request.urlopen(req, timeout=self.timeout) as resp:
@@ -267,16 +328,20 @@ class LLMBatchClient:
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": prompt}
             ],
-            "temperature": 0.2,
-            "response_format": {"type": "json_object"}
+            "max_tokens": 4096,
+            "temperature": 0.2
         }
+        # Only add response_format if not using Groq gpt-oss which can trigger json_validate_failed on CoT
+        if not (self.provider == "groq" and "gpt-oss" in self.model):
+            payload["response_format"] = {"type": "json_object"}
         data = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(
             url,
             data=data,
             headers={
                 "Content-Type": "application/json",
-                "Authorization": f"Bearer {self.api_key}"
+                "Authorization": f"Bearer {self.api_key}",
+                "User-Agent": "LeadIntelligenceSystem/1.0"
             },
             method="POST"
         )
@@ -288,32 +353,105 @@ class LLMBatchClient:
                 return choices[0].get("message", {}).get("content", "")
             return ""
 
+    def _call_claude_api(self, prompt: str) -> str:
+        """Execute request to Anthropic Claude API using urllib."""
+        url = "https://api.anthropic.com/v1/messages"
+        payload = {
+            "model": self.model if "claude" in self.model else "claude-3-haiku-20240307",
+            "system": SYSTEM_PROMPT,
+            "messages": [
+                {"role": "user", "content": prompt}
+            ],
+            "max_tokens": 4096,
+            "temperature": 0.2
+        }
+        data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(
+            url,
+            data=data,
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": self.api_key or "",
+                "anthropic-version": "2023-06-01"
+            },
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+            body = resp.read().decode("utf-8")
+            result = json.loads(body)
+            content = result.get("content", [])
+            if content and isinstance(content, list):
+                return content[0].get("text", "")
+            return ""
+
     def _parse_llm_response(self, text: str, leads: List[Lead]) -> List[LeadEvaluation]:
         """Safely parse LLM JSON output and construct LeadEvaluation objects."""
         # Clean markdown code fences if present
         clean_text = text.strip()
-        if clean_text.startswith("```"):
-            clean_text = re.sub(r"^```[a-zA-Z]*\n?", "", clean_text)
-            clean_text = re.sub(r"\n?```$", "", clean_text)
+        if "```" in clean_text:
+            match_fence = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", clean_text)
+            if match_fence:
+                clean_text = match_fence.group(1).strip()
 
+        # If not matching fence, locate outer JSON braces
+        if not (clean_text.startswith("{") or clean_text.startswith("[")):
+            match_json = re.search(r"(\{[\s\S]*\}|\[[\s\S]*\])", clean_text)
+            if match_json:
+                clean_text = match_json.group(0).strip()
+
+        # Attempt robust parsing with fallback repair
+        data = None
         try:
             data = json.loads(clean_text)
-        except Exception as e:
-            logger.warning(f"Failed to parse LLM JSON: {e}. Raw snippet: {clean_text[:200]}")
+        except Exception:
+            # Try removing trailing commas
+            no_trailing = re.sub(r",\s*([\}\]])", r"\1", clean_text)
+            try:
+                data = json.loads(no_trailing)
+            except Exception:
+                # Try balancing truncated brackets
+                for suffix in ("}", "]}", "]}}"):
+                    try:
+                        data = json.loads(no_trailing + suffix)
+                        break
+                    except Exception:
+                        pass
+
+        if not data:
+            logger.warning(f"Failed to parse LLM JSON after repair attempts. Raw snippet: {clean_text[:200]}")
             return []
 
-        eval_list = data.get("evaluations", [])
+        if isinstance(data, list):
+            eval_list = data
+        elif isinstance(data, dict):
+            eval_list = data.get("evaluations") or data.get("leads") or data.get("results") or []
+        else:
+            return []
+
         if not isinstance(eval_list, list):
             return []
 
         leads_by_id = {l.lead_id: l for l in leads}
         results = []
 
-        for item in eval_list:
-            lead_id = item.get("lead_id")
-            if lead_id not in leads_by_id:
+        for idx, item in enumerate(eval_list):
+            if not isinstance(item, dict):
                 continue
-            lead = leads_by_id[lead_id]
+            raw_id = item.get("lead_id") or item.get("id") or item.get("index")
+            lead = None
+            try:
+                num_id = int(raw_id)
+                if num_id in leads_by_id:
+                    lead = leads_by_id[num_id]
+            except (ValueError, TypeError):
+                pass
+
+            if lead is None and idx < len(leads):
+                lead = leads[idx]
+
+            if lead is None:
+                continue
+            lead_id = lead.lead_id
 
             # Parse factor breakdown
             factors = {}
@@ -336,10 +474,13 @@ class LLMBatchClient:
                         body=m.get("body", "")
                     ))
 
-            # If messages empty and lead is qualified, use rubric generator
-            decision = item.get("decision", "REVIEW").upper()
-            score = float(item.get("score", 5.0))
-            priority = item.get("priority")
+            # Normalize decision
+            decision = str(item.get("decision", "REVIEW")).upper()
+            if decision in ("REJECTED", "REJECT", "DISQUALIFY"):
+                decision = "DISQUALIFIED"
+
+            score = float(item.get("score") or item.get("qualification_score") or 5.0)
+            priority = item.get("priority") or item.get("priority_rank")
 
             if decision == "QUALIFIED" and not messages:
                 messages = self.rubric.generate_outreach_messages(lead, score, priority)
@@ -351,7 +492,7 @@ class LLMBatchClient:
                 decision=decision,
                 priority=priority,
                 factor_breakdown=factors or self.rubric.evaluate(lead).factor_breakdown,
-                primary_reason=item.get("primary_reason", "LLM batch evaluation"),
+                primary_reason=item.get("primary_reason") or item.get("reasoning") or "LLM batch evaluation",
                 outreach_messages=messages,
                 needs_review=bool(item.get("needs_review", False)),
                 review_reasons=item.get("review_reasons", []),

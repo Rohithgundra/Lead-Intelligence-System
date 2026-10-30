@@ -129,7 +129,16 @@ class LeadPipeline:
             batch_results = self.client.process_batch(batch_leads)
             all_evaluations.extend(batch_results)
 
-        print(f"\n[✓] Finished batch evaluation of {len(all_evaluations)} leads.")
+            # Polite delay between batches when using remote LLM API to respect free-tier RPM limits
+            if not self.client.dry_run and self.client.provider not in ("rule-based", "offline") and b_idx < total_batches - 1:
+                time.sleep(0.5)
+
+        llm_count = sum(1 for e in all_evaluations if e.processed_by.startswith("llm"))
+        fallback_count = len(all_evaluations) - llm_count
+        if llm_count > 0:
+            print(f"\n[✓] Finished batch evaluation of {len(all_evaluations)} leads ({llm_count} via {self.client.provider.upper()} API, {fallback_count} via rubric fallback).")
+        else:
+            print(f"\n[✓] Finished batch evaluation of {len(all_evaluations)} leads ({len(all_evaluations)} via deterministic rubric engine).")
 
         elapsed_time = time.time() - start_time
 

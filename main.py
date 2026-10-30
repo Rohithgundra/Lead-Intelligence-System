@@ -50,8 +50,8 @@ def parse_args():
         "-p", "--provider",
         dest="provider",
         default="auto",
-        choices=["auto", "gemini", "openai", "groq", "rule-based"],
-        help="LLM provider to use, or 'rule-based' for deterministic qualification."
+        choices=["auto", "gemini", "openai", "groq", "claude", "anthropic", "rule-based"],
+        help="LLM provider to use (gemini, openai, groq, claude), or 'rule-based' for deterministic qualification."
     )
     parser.add_argument(
         "-m", "--model",

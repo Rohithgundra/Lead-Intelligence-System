@@ -77,3 +77,8 @@ desktop.ini
 *.log
 scratch/
 tmp/
+
+# Runtime test outputs
+output_testing*
+output_*.csv
+output_report.json

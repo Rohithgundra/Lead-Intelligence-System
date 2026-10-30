@@ -84,6 +84,8 @@ def calculate_analytics(evaluations: List[LeadEvaluation], processing_time_sec: 
         "review_pct": round((len(review) / total) * 100, 1),
         "disqualified_count": len(disqualified),
         "disqualified_pct": round((len(disqualified) / total) * 100, 1),
+        "rejected_count": len(disqualified),
+        "rejected_pct": round((len(disqualified) / total) * 100, 1),
         "priority_distribution": {
             "P1_HIGH": len(p1_leads),
             "P2_MEDIUM": len(p2_leads),
@@ -100,7 +102,8 @@ def calculate_analytics(evaluations: List[LeadEvaluation], processing_time_sec: 
         "qualified_by_industry": dict(qualified_industries.most_common(10)),
         "company_size_distribution": dict(size_distribution),
         "source_distribution": dict(source_distribution.most_common(10)),
-        "common_disqualification_reasons": dict(disqualification_reasons.most_common(5))
+        "common_disqualification_reasons": dict(disqualification_reasons.most_common(5)),
+        "common_rejection_reasons": dict(disqualification_reasons.most_common(5))
     }
 
 
@@ -151,8 +154,12 @@ def generate_json_report(
             "system_version": "1.0.0"
         },
         "executive_summary": analytics,
+        "priority_queue": [e.to_dict() for e in qualified_sorted],
         "priority_queue_qualified": [e.to_dict() for e in qualified_sorted],
+        "flagged_leads": [e.to_dict() for e in review_queue],
         "review_queue_flagged": [e.to_dict() for e in review_queue],
+        "disqualified_leads": [e.to_dict() for e in disqualified_archive],
+        "rejected_leads": [e.to_dict() for e in disqualified_archive],
         "disqualified_archive": [e.to_dict() for e in disqualified_archive],
         "sample_outreach_messages": sample_messages,
         "all_evaluations": [e.to_dict() for e in evaluations]
@@ -233,6 +240,9 @@ def print_cli_summary(analytics: Dict[str, Any], evaluations: List[LeadEvaluatio
     print("=" * 70)
     print(f" Total Inbound Leads Ingested:    {total:,}")
     print(f" Processing Time:                 {roi.get('automated_processing_time_seconds', 0)}s ({roi.get('automated_processing_time_seconds', 0)/max(total, 1):.3f}s / lead)")
+    engine_stats = Counter(e.processed_by for e in evaluations)
+    engine_summary = ", ".join(f"{k}: {v}" for k, v in engine_stats.items())
+    print(f" Evaluation Engine:               {engine_summary}")
     print("-" * 70)
     print(f" [✓] QUALIFIED (Ready for SDR):   {q_count:,} ({q_pct}%)")
     print(f"     - P1 High Priority (<= 2h):  {p1:,} leads")

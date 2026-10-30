@@ -148,8 +148,11 @@ class LeadEvaluation:
             "lead_id": self.lead_id,
             "lead": self.lead.to_dict(),
             "score": round(self.total_score, 1),
+            "qualification_score": round(self.total_score, 1),
             "decision": self.decision,
             "priority": self.priority,
+            "priority_rank": self.priority,
+            "reasoning": self.primary_reason,
             "primary_reason": self.primary_reason,
             "factor_breakdown": {
                 k: v.to_dict() for k, v in self.factor_breakdown.items()
